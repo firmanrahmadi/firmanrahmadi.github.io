@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Coming soon</title>
+    <!-- Bootsrap CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+    <div class="hero">
+        <p>Building Awesome Website</p>
+    <h1>COMING SOON</h1>
+    <hr>
+    <p id="launch"></p>
+    <div id="footer">
+            <div class="container">
+                <p class="footer">Copyright © Medan Dev | All right reserved.</p>
+            </div>
+        </div>
+    </div>
+    </header>
+
+    <script>
+    var countDownDate = new Date("feb 1, 2020 00:00:00").getTime();
+    var x = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("launch").innerHTML  = days + "d " + hours + "h " + minutes + "m " + seconds + "s "
+
+        if(distance < 0 ) {
+            clearInterval(x);
+            document.getElementById("launch").innerHTML = "Please Check Up Next Time";
+        }
+
+    }, 1000);
+    </script>
+</body>
+</html>
